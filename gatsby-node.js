@@ -38,45 +38,45 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Get all markdown blog posts sorted by date
-  const blogPostsQueryResult = await graphql(
-    `
-      {
-        allPrismicPost(sort: { order: DESC, fields: data___post_date }) {
-          nodes {
-            id
-            uid
-            url
-            data {
-              excerpt
-              title {
-                text
-              }
-              post_date(formatString: "MMMM d, yyyy")
-            }
-          }
-        }
-      }
-    `
-  );
+  // const blogPostsQueryResult = await graphql(
+  //   `
+  //     {
+  //       allPrismicPost(sort: { order: DESC, fields: data___post_date }) {
+  //         nodes {
+  //           id
+  //           uid
+  //           url
+  //           data {
+  //             excerpt
+  //             title {
+  //               text
+  //             }
+  //             post_date(formatString: "MMMM d, yyyy")
+  //           }
+  //         }
+  //       }
+  //     }
+  //   `
+  // );
 
-  const posts = blogPostsQueryResult.data.allPrismicPost.nodes;
+  // const posts = blogPostsQueryResult.data.allPrismicPost.nodes;
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].uid;
-      const nextPostId =
-        index === posts.length - 1 ? null : posts[index + 1].uid;
+  // if (posts.length > 0) {
+  //   posts.forEach((post, index) => {
+  //     const previousPostId = index === 0 ? null : posts[index - 1].uid;
+  //     const nextPostId =
+  //       index === posts.length - 1 ? null : posts[index + 1].uid;
 
-      createPage({
-        path: post.url,
-        component: blogPost,
-        context: {
-          id: post.id,
-          uid: post.uid,
-          previousPostId,
-          nextPostId,
-        },
-      });
-    });
-  }
+  //     createPage({
+  //       path: post.url,
+  //       component: blogPost,
+  //       context: {
+  //         id: post.id,
+  //         uid: post.uid,
+  //         previousPostId,
+  //         nextPostId,
+  //       },
+  //     });
+  //   });
+  // }
 };

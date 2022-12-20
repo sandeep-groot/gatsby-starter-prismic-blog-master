@@ -13,12 +13,13 @@ const HomePageTemplate = ({ data, location }) => {
     user_image: userImage,
   } = data?.prismicHomePage?.data || {};
 
-  const blogList = data?.allPrismicPost?.nodes || [];
+  // const blogList = data?.allPrismicPost?.nodes || [];
 
   return (
     <Layout location={location} title={title.text}>
       <Bio image={userImage} description={description.richText} />
-      <ol style={{ listStyle: `none` }}>
+
+      {/* <ol style={{ listStyle: `none` }}>
         {blogList.map((post) => {
           const title = post.data.title.text;
 
@@ -42,7 +43,7 @@ const HomePageTemplate = ({ data, location }) => {
             </li>
           );
         })}
-      </ol>
+      </ol> */}
     </Layout>
   );
 };
@@ -72,23 +73,24 @@ export const homePageQuery = graphql`
         }
       }
     }
-    allPrismicPost {
-      nodes {
-        url
-        uid
-        data {
-          post_date
-          excerpt
-          title {
-            html
-            text
-          }
-          post_body {
-            html
-          }
-        }
-      }
-    }
+
+    # allPrismicPost {
+    #   nodes {
+    #     url
+    #     uid
+    #     data {
+    #       post_date
+    #       excerpt
+    #       title {
+    #         html
+    #         text
+    #       }
+    #       post_body {
+    #         html
+    #       }
+    #     }
+    #   }
+    # }
   }
 `;
 
