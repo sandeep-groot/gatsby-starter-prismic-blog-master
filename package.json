@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-prismic-blog",
+  "name": "gatsby-prismic",
   "version": "1.0.0",
   "private": true,
-  "description": "gatsby-starter-prismic-blog",
-  "author": "Mahesh Samudra <maheshsamudra@gmail.com>",
+  "description": "Architecture for gatsby prismic",
+  "author": "Sandeep <sandeep.gill@grootsoftwares.com",
   "keywords": [
-    "gatsby"
+    "gatsby prismic node "
   ],
   "license": "0BSD",
   "scripts": {

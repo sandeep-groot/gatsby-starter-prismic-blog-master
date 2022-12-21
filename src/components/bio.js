@@ -3,6 +3,7 @@ import { PrismicRichText } from "@prismicio/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Bio = ({ image, description }) => {
+  console.log("image :>> ", image);
   return (
     <div className={"bio"}>
       <GatsbyImage
@@ -12,13 +13,13 @@ const Bio = ({ image, description }) => {
         height={50}
         width={50}
       />
-      {/*<img*/}
-      {/*  className={"bio-avatar"}*/}
-      {/*  src={image.url}*/}
-      {/*  alt={image.alt}*/}
-      {/*  height={50}*/}
-      {/*  width={50}*/}
-      {/*/>*/}
+      {/* <img
+        className={"bio-avatar"}
+        src={image.url}
+        alt={image.alt}
+        height={50}
+        width={50}
+      /> */}
       <PrismicRichText field={description} />
     </div>
   );
